@@ -1,4 +1,4 @@
-// app.js version3
+// app.js version5
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
 angular.module('formApp', ['ngAnimate', 'ui.router'])
