@@ -35,6 +35,22 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 		.state('form.reportfound', {
 			url: '/reportfound',
 			templateUrl: 'reportfound.html'
+		})
+		.state('form.reportitem', {
+			url: '/reportitem',
+			templateUrl: 'reportitem.html'
+		})
+		.state('form.edit', {
+			url: '/edit',
+			templateUrl: 'edit-item.html'
+		})
+		.state('form.addcomment', {
+			url: '/comment',
+			templateUrl: 'addcomment.html'
+		})
+		.state('form.viewitem', {
+			url: '/view',
+			templateUrl: 'viewItem.html'
 		});
 		
 	// catch all route
