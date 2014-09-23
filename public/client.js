@@ -60,10 +60,15 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 			url: '/about',
 			templateUrl: 'about-us.html'
 		})
+		.state('form.admin', {
+			url: '/admin',
+			templateUrl: 'admin.html'
+		})
 		.state('form.help', {
 			url: '/help',
 			templateUrl: 'help.html'
 		});
+		
 		
 	// catch all route
 	// send users to the form page 

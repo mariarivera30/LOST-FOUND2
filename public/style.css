@@ -95,6 +95,10 @@ div.centreheader
 .list-group-item{
     background:#567884;
 }
+.about{
+  color: #2A4D58;
+  text-align: left;
+}
 #bs-example-navbar-collapse-1{
     padding-top: 5px;
 }
@@ -104,6 +108,18 @@ div.centreheader
 #editItemView{
   padding-right: 95px;
 }
+#picFeedback{
+  width: 35%;
+  padding-top: 17px;
+  padding-left: 30px;
+
+}
+#btnContactUs{
+
+
+}
+
+
 /* form styling */
 #form-container               { background:#2F4F4F; margin-bottom:100px; 
     border-radius:5px; }
