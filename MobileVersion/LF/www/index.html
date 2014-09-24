@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>LostFound Index</title>
+
+   <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+</head>
+
+<body>
+
+  <html ng-app="LostFound">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>LostFound App</title>
+
+    <link href="http://code.ionicframework.com/0.9.27/css/ionic.min.css" rel="stylesheet">
+    <script src="http://code.ionicframework.com/0.9.27/js/ionic.bundle.min.js"></script>
+<!--
+  <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+   
+
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+-->
+
+</head>
+<body>
+
+<!-- ALL VIEW STATES LOADED IN HERE -->
+<ion-nav-view></ion-nav-view>
+
+
+<!-- THE MAIN CONTAINER HEADER-------------------------------------->
+<script id="mainContainer.html" type="text/ng-template">
+
+    <ion-side-menus>
+
+        <ion-pane ion-side-menu-content>
+            <ion-nav-bar type="bar bar-header bar-dark"
+                         back-button-type="button-icon"
+                         back-button-icon="ion-ios7-arrow-back"
+                         animation="nav-title-slide-ios7"
+                >
+              
+             </ion-nav-bar>
+            <ion-nav-view name="main"></ion-nav-view>
+        </ion-pane>
+
+        <ion-side-menu side="left">
+            <header class="bar bar-header bar-stable">
+                <div class="title">Lost\Found Menu</div>
+            </header>
+            <ion-content has-header="true">
+                <ul class="list">
+             
+             <!--<a ui-sref="main.reportitem" class="item" ng-click="toggleMenu()">Report Item</a>-->
+             <a ui-sref="main.home" class="item" ng-click="toggleMenu()">Posts</a>
+   <!--      <a ui-sref="main.profile" class="item" ng-click="toggleMenu()">Profile</a>
+             <a ui-sref="main.myitems" class="item" ng-click="toggleMenu()">myItems</a>
+             <a ui-sref="main.reportedusers" class="item" ng-click="toggleMenu()">Report User</a>-->
+             <a ui-sref="main.info" class="item" ng-click="toggleMenu()">About us</a>
+             <a ui-sref="main.feedback" class="item" ng-click="toggleMenu()">FeedBack</a>   
+             <a ui-sref="main.help" class="item" ng-click="toggleMenu()">Help</a>
+            <!-- <a ui-sref="entry" class="item">Log Out</a>-->
+                  
+                </ul>
+            </ion-content>
+        </ion-side-menu>
+
+    </ion-side-menus>
+
+
+</script>
+
+
+
+
+
+<!--TABS and content------------------------------ -->
+<script id="home.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}"  left-buttons="leftButtons" right-buttons="rightButtons">
+
+        <ion-tabs tabs-type="tabs-icon-top">
+          
+          <ion-tab title="LostItems" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+                <ion-content has-header="true" padding="true">
+                  
+                  <div class="list">
+
+                    <div class="item item-input-inset">
+                      <label class="item-input-wrapper">
+                        <input type="text" placeholder="Search">
+                      </label>
+                    <select width="100" style="width: 100px">
+                      <option selected>All</option>
+                      <option>Date</option>
+                      <optgroup label = "Category">
+                        <option>Electronic</option>
+                        <option>Books</option>
+                        <option>Bags</option>
+                        <option>Personal</option>
+                        <option>Clothes</option>
+                        <option>Other</option>
+                      </optgroup>
+                      <option>Building</option>
+                      <option>ItemId</option>
+                    </select>
+                    </div>
+                  </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" ui-sref="main.item">
+                 <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
+                          <h2>Item Lost 1</h2>
+                          <p>I lost item 1 near stefani</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" sref="home.item">
+                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
+                          <h2>Item Lost 2</h2>
+                          <p>I lost item 2 near chardon</p>
+                        </a>
+                      </div>
+                    
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
+                          <h2>Item Lost 3</h2>
+                          <p>I lost item 3 near biology</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
+                          <h2>Item Lost 4</h2>
+                          <p>I lost item 4 near ICDL</p>
+                        </a>
+                      </div>
+                  
+                </ion-content>
+            </ion-tab>
+
+          <ion-tab title="NewsFeed" icon-on="ion-ios7-monitor" icon-off="ion-ios7-monitor-outline">
+                <ion-content has-header="true" padding="true">
+                  
+                  <div class="list">
+
+                    <div class="item item-input-inset">
+                      <label class="item-input-wrapper">
+                        <input type="text" placeholder="Search">
+                      </label>
+                    <select width="100" style="width: 100px">
+                      <option selected>All</option>
+                      <option>Date</option>
+                      <optgroup label = "Category">
+                        <option>Electronic</option>
+                        <option>Books</option>
+                        <option>Bags</option>
+                        <option>Personal</option>
+                        <option>Clothes</option>
+                        <option>Other</option>
+                      </optgroup>
+                      <option>Building</option>
+                      <option>ItemId</option>
+                    </select>
+                    </div>
+                  </div>
+                  
+                <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
+                          <h2>Item Lost 1</h2>
+                          <p>I lost item 1 near stefani</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
+                          <h2>Item Found 2</h2>
+                          <p>I recently found item 2 near stefani</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
+                          <h2>Item Lost 2</h2>
+                          <p>I lost item 2 near chardon</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
+                          <h2>Item Found 3</h2>
+                          <p>I recently found item 3 near La plazita</p>
+                        </a>
+                      </div>
+                    
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
+                          <h2>Item Lost 3</h2>
+                          <p>I lost item 3 near biology</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
+                          <h2>Item Found 1</h2>
+                          <p>I recently found item 1 near BIOL</p>
+                        </a>
+                      </div>
+                  
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
+                          <h2>Item Lost 4</h2>
+                          <p>I lost item 4 near ICDL</p>
+                        </a>
+                      </div>
+                    
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
+                          <h2>Item Found 4</h2>
+                          <p>I recently found item 4 near BIOL</p>
+                        </a>
+                      </div>
+                      
+                
+                </ion-content>
+            </ion-tab>
+
+         <ion-tab title="FoundItems" icon-on="ion-ios7-box" icon-off="ion-ios7-box-outline">
+                <ion-content has-header="true" padding="true">
+                  
+                  <div class="list">
+
+                    <div class="item item-input-inset">
+                      <label class="item-input-wrapper">
+                        <input type="text" placeholder="Search">
+                      </label>
+                    <select width="100" style="width: 100px">
+                      <option selected>All</option>
+                      <option>Date</option>
+                      <optgroup label = "Category">
+                        <option>Electronic</option>
+                        <option>Books</option>
+                        <option>Bags</option>
+                        <option>Personal</option>
+                        <option>Clothes</option>
+                        <option>Other</option>
+                      </optgroup>
+                      <option>Building</option>
+                      <option>ItemId</option>
+                    </select>
+                    </div>
+                  </div>
+                    
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
+                          <h2>Item Found 1</h2>
+                          <p>I recently found item 1 near BIOL</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
+                          <h2>Item Found 2</h2>
+                          <p>I recently found item 2 near stefani</p>
+                        </a>
+                      </div>
+                    
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
+                          <h2>Item Found 3</h2>
+                          <p>I recently found item 3 near La plazita</p>
+                        </a>
+                      </div>
+                  
+                  <div class="list">
+                        <a class="item item-thumbnail-left" href="#">
+                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
+                          <h2>Item Found 4</h2>
+                          <p>I recently found item 4 near BIOL</p>
+                        </a>
+                      </div>
+                  
+                </ion-content>
+            </ion-tab>
+        </ion-tabs>
+
+
+    </ion-view>
+</script>
+
+ <!--Item Specific View -------------------------------------------------------------->  
+<script id="item.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons" right-buttons="rightButtons">
+
+        <ion-content has-header="true" padding="true">
+          <div class="list card">
+
+<!--                <div class="item item-avatar">
+                  <img src="https://cdn4.iconfinder.com/data/icons/avatar-and-user/86/Avatar_person_user_character_man_woman_human-04-512.png">
+                  -->
+            <div>
+                  <h4>Djamsha@gmail.com</h4>
+                  <p><a class="button icon-left ion-ios7-telephone button-clear button-dark">787-123-4567</a></p>
+                  <p>November 05, 1955</p>
+                  
+                </div>
+
+                <div class="item item-body">
+                  <img class="full-image" src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
+                  <p>
+                    I lost this camera today at stafani building around 12:30pm today. Please report it if you find it or leave a comment with information. 
+                  </p>
+            </div>
+            <div class="item item-body">
+                  <p> <a href="#" class="subdued">5 Comments</a></p>
+                  <p><a href="#" class="subdued">Location: Stefani</a></p>
+                <p><a href="#" class="subdued">Seen By: 100</a></p>
+                  
+                </div>
+
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    Comment
+                  </a>
+                  <a class="tab-item" href="#">
+                    <i class="icon ion-thumbsdown"></i>
+                    Report Post
+                  </a>
+                </div>
+
+              </div>
+          
+            
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
+<script id="reportitem1.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+          <div class="list">
+
+ 
+            <p><h5>Contact information:</h5></p>
+    <div class="list">
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Name</span>
+              <input type="text" placeholder="John Milk">
+            </label>
+             <div class="list">
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name</span>
+              <input type="text" placeholder="John Milk">
+            </label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">Valid Email</span>
+              <input type="text" placeholder="john.milk@upr.edu">
+            </label>
+            <label class="item item-input item-stacked-label">
+              <span class="input-label">PhoneNumber          </span>
+              <input type="text" placeholder="787-123-4567">
+            </label>
+          </div>
+  
+          
+            
+      <p></p>
+      <p><button class="button icon-right ion-chevron-right button-stable" ui-sref='main.reportitem2'>Continue</button></p>
+          
+        </ion-content>
+
+    </ion-view>
+
+</script>
+  
+  <script id="reportitem2.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons" right-buttons="rightButtons">
+
+        <ion-content has-header="true" padding="true">
+          <div class="list">
+            
+            <label class="item item-input">
+              <span class="input-label">Item Name</span>
+              <input type="text">
+            </label>
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Select a category of the item
+    </div>
+    <select>
+      <optgroup label = "Category">
+        <option>Electronic</option>
+        <option>Books</option>
+        <option>Bags</option>
+        <option>Personal</option>
+        <option>Clothes</option>
+        <option>Other</option>
+      </optgroup>
+    </select>
+  </label>
+
+</div>
+            <label class="item item-input item-stacked-label">
+          <span class="input-label">Provide a brief description of the item</span>
+
+                <textarea placeholder="Write description here..." rows="8" cols="10">
+                </textarea>
+              </label>
+            
+          <p><h></h></p>
+         
+          <label>
+          <div class="entrybuttons">
+           <p> <button class="button button-stable icon-right ion-image">Upload</button>
+          
+            <button class="button button-stable icon-right ion-camera">Take</button></p>
+          </div>
+          </label>
+          <p><h5>Select contact information to be displayed:</h5></p>
+          <label>
+           <ul  class="list">
+
+                <li class="item item-toggle">
+                   E-mail
+                   <label class="toggle toggle-dark">
+                     <input type="checkbox">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+             <li class="item item-toggle">
+                   Name
+                   <label class="toggle toggle-dark">
+                     <input type="checkbox">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+             <li class="item item-toggle">
+                   Phone Number
+                   <label class="toggle toggle-dark">
+                     <input type="checkbox">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+
+              </ul>
+          </label>
+          <p></p>
+          <p><h5>Send email everytime user comments:</h5></p>
+          <label>
+           <ul  class="list">
+
+                <li class="item item-toggle">
+                   Comment update emails
+                   <label class="toggle toggle-dark">
+                     <input type="checkbox">
+                     <div class="track">
+                       <div class="handle"></div>
+                     </div>
+                   </label>
+                </li>
+              </ul>
+          </label>
+      <p></p>
+      <p><button class="button icon-right ion-star button-stable">Preview</button></p>
+          
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
+<!--ABOUT US -------------------------------------------------------------->  
+<script id="info.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+
+            <h1>About us</h1>
+          <p>Lost or Found is a web-based system that will allow users to report lost or found items on a Campus. The system provides a simple and user friendly interaction with the user. Every user that wants to use any of the versions of this web-app will have to register with an email and a phone number. Each user will have a credibility status. This status will be made by the grant of other users on the app which indicates that it is a trustworthy user. Also to avoid bad intentional users, the application provides a way to report an user. This report can be seen by every user registered on the application to keep them warned.
+          </p>
+          
+          <p><a ui-sref="main.home" class="button button outline button-stable">Contact Us</a></p>
+          <p></p>
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
+ <script id="feedback.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+          
+            <h6>With your comments we can build a better app.</h6>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Please leave us your feedback</span>
+
+                <textarea placeholder="Write Commet here..." rows="8" cols="10">
+                </textarea>
+              </label>
+               <p><h></h></p>
+    <button class="button button-stable" ui-sref = 'main.info'>
+  Submit FeedBack
+    </button>
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
