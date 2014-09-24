@@ -73,114 +73,97 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 	// catch all route
 	// send users to the form page 
 	$urlRouterProvider.otherwise('/form/newsfeeds');
+
 })
 
-// our controller for the form
-// =============================================================================
+	// function to process the form
+	
 .controller('formController', function($scope) {
 	
 	// we will store all of our form data in this object
-	$scope.formData = {};
+	$scope.items = [{'name': 'Maria Rivera',
+	     'itemId': '#80',
+	 	  'views': '12',
+	 	  'status':'FOUND',
+	 	  'location':'Fisica'},
+
+	 	  {	'name': 'Juan Rivera',
+          	'itemId': '#70',
+ 	  		'views': '13',
+ 	  		'status':'LOST',
+ 	 		'location':'STEFANI'},
+
+ 	  	  {'name': 'Irving Rivera',
+	     	'itemId': '#80',
+	 	 	'views': '12',
+	 	  	'status':'FOUND',
+	 	    'location':'Fisica'},
+	 	  {'name': 'Xavier De La Torre',
+     		'itemId': '#890',
+ 	  		'views': '130',
+ 	  		'status':'FOUND',
+ 	  		'location':'Cafeteria'}];
+
+
 	
 	// function to process the form
 	$scope.processForm = function() {
 		alert('awesome!');
 	};
 	
-});
-
-
-function doctor() {
-
- 
-	$.mobile.loading("show");
-	$.ajax({
-		url : "http://localhost:3000/doctor/all",
-		contentType: "application/json",
-		success : function(data, textStatus, jqXHR){
-			var categoryList = data.doctors;
-			
-			var list = $("#listview");
-			list.empty();
-			for (var key in categoryList){ 
-				
-					list.append("<li>" +categoryList[key].doctor_name+" " +categoryList[key].doctor_last +" "+categoryList[key].doctor_email+
-					
-					
-					
-					"</a></li>");
-				
-
-			}
-			list.listview("refresh");
-			$.mobile.loading("hide");
-		},
-		error: function(data, textStatus, jqXHR){
-			console.log("textStatus: " + textStatus);
-			//alert("Data not found!");
-			$.mobile.navigate("#404ErrorPage");
-		}
-
-}); }
-function addDoctor(){
-	//need to fill all of these fields to submit a new product
-	var name = document.getElementById("name").value;
-	var last = document.getElementById("last").value;
-
-	var jsonData = {"name": name,
-					"last": last
-					};
-					//alert("ADDdOC");
-					//alert(JSON.stringify(jsonData));
-
-	$.ajax({
-		url : "http://localhost:3000/doctor/signup1",
-		type: 'POST',
-		data: JSON.stringify(jsonData),
-		contentType: "application/json",
-		success: function(data, textStatus, jqXHR){
-			alert("added Doc");
-		},
-		error: function(data, textStatus, jqXHR){
-			alert("error adding Doctor");
-
-		}
-	});
-		
-
-}
-
-function getdoctorbyid() {
-var id = document.getElementById("search").value;
- 
-	$.mobile.loading("show");
+})
+.controller('CategoryController', function($scope) {
 	
-	$.ajax({
-		url : "http://localhost:3000/doctor/single/" + id,
-		contentType: "application/json",
-		success : function(data, textStatus, jqXHR){
-			var categoryList = data.doctors;
-			
-			var list = $("#listview");
-			list.empty();
-			for (var key in categoryList){ 
-				
-					list.append("<li>" +categoryList[key].doctor_name+" " +categoryList[key].doctor_last +" "+categoryList[key].doctor_email+
-					
-					"</a></li>");
-				
+	// we will store all of our form data in this object
+	$scope.categories = [{'name': 'Date'},{'name': 'Electronics'},{'name': 'Books'},{'name': 'Bags'},{'name': 'Personal'},{'name': 'Clothes'}
+	,{'name': 'Other'}];
+	
+})
 
-			}
-			list.listview("refresh");
-			$.mobile.loading("hide");
-		},
-		error: function(data, textStatus, jqXHR){
-			console.log("textStatus: " + textStatus);
-			//alert("Data not found!");
-			$.mobile.navigate("#404ErrorPage");
-		}
+.controller('itemViewController', function($scope) {
+	
+	// we will store all of our form data in this object
+	$scope.comments = [{'name': 'Maria Rivera',
+	     
+	 	  'date':'03/08/15',
+	 	   'comment':'Las vi en el departamento'
+	 	},
+	 	{'name': 'Juan del Pueblo',
+	     
+	 	  'date':'03/08/15',
+	 	   'comment':'Las tiene Pedro'
+	 	},
+	 	{'name': 'Karla Rivera',
+	     
+	 	  'date':'03/08/15',
+	 	   'comment':'Se te calleron en el zafacon.'
+	 	},
+	 	];
 
-}); }
- 
+$scope.item = {'name': 'Maria Rivera',
+'phone':'7879787978',
+	     'itemId': '#80',
+	 	  'views': '12',
+	 	  'status':'FOUND',
+	 	  'location':'Fisica',
+	 	  'reportDate':'03/08/15',
+	 	   'itemName':'Keys',
+	 	   'description':'Tiene 6 llaves. ',
+	 		'city':'San Juan',
+	 		'thumbsDown':'60',
+	 		'successDate':'undelivered',
+	 		'picture':'PICTURE'
+	 	};
+	
+	// function to process the form
+	$scope.processForm = function() {
+		alert('awesome!');
+	};
+	
+})
+;
+
+
+
 
 

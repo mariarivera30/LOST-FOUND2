@@ -5,25 +5,25 @@
 
         padding-top:40px;
         }</style>
-    <div class="container">
+    <div class="container" ng-controller="itemViewController">
 
         <div id ="editItemView"class="row">
 
-           
+         
 
             <div class="col-md-7">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="http://www.quick-return-cleaners.co.uk/sitebuildercontent/sitebuilderpictures/keys.jpg" height="400" width="400">
-                    <div class="caption-full">
+                    <div class="caption-full" >
                         
-                        <h4>Keys  Found by: <a> Maria Rivera</a> </h4>
-                        <h4>Reported Date: 01/05/14</h4>
-                        <h4>Success Satus: Delivered</h4>
-                         <h4>Item id: 5</h4>
-                          <h4>Location: Stefani</h4>
+                        <h4>Keys  Found by: <a> {{item.name}}</a> </h4>
+                        <h4>Reported Date: {{item.reportDate}}</h4>
+                        <h4>Success Date: {{item.successDate}}</h4>
+                         <h4>Item id: {{item.itemId}}</h4>
+                          <h4>Location: {{item.location}}</h4>
                           <h4>Description:</h4>                     
-                        <p>Tiene 6 llaves. Estaba a eso de las 3 de la tarde cerca del Lobby.</p>
+                        <p>{{item.description}}</p>
                     </div>
                     
                 </div>
@@ -35,29 +35,18 @@
                     </div>
 
                     <hr>
-
+                    <li id="comments" ng-repeat="com in comments">
                     <div class="row">
+                        <span class="pull-right">{{com.date}}</span>
                         <div class="col-md-12">
-                            <span class="glyphicon glyphicon-icon-ok-sign"></span>
-                            Irving Ramirez said:
-                            <span class="pull-right">10 days ago</span>
-                            <p>Son de Pedro. Este es tu numero 7876307513</p>
+                            
+                            <center>{{com.name}} said:
+                            <p>{{com.comment}}</p></center>
                         </div>
                     </div>
-
                     <hr>
-
-                    
-                    <div class="row">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-icon-ok-sign"></span>
-                            Angel Xavier said:
-                            <span class="pull-right">10 days ago</span>
-                            <p>En el departamento estan preguntando por ellas. </p>
-                        </div>
-                    </div>
-
-                    <hr>
+                </li>
+                   
                     
 
 
