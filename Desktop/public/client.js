@@ -69,7 +69,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 			url: '/admin',
 			templateUrl: 'admin.html'
 		})
-
+		
   		.state('form.admin.users', {
     		parent: 'form.admin',
     		url: '/adminusers',
