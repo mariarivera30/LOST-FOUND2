@@ -61,16 +61,27 @@ div.centreheader
   padding-bottom: 10px;
 
 }
+#SearchBtn{
+  width: 90px;
+  height: 40px;
+
+}
 #BlockBtn{
 
   width: 90px;
-  height: 35px;
+  height: 40px;
 }
 
 #UnblockBtn{
  
   width: 90px;
-  height: 35px;
+  height: 40px;
+}
+#AddBtn{
+ 
+  width: 90px;
+  height: 40px;
+
 }
 .CheckBoxedit2{
   padding-right: 130px;
@@ -161,10 +172,11 @@ div.centreheader
   padding-left: 30px;
 
 }
-#btnContactUs{
-
+#AdminCategory{
+  padding-top: 10px;
 
 }
+
 
 
 /* form styling */
