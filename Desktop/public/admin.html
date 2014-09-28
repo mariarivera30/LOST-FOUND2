@@ -1,16 +1,23 @@
-<ul class="nav nav-tabs" role="tablist">
+
+<div>
+<ul class="nav nav-tabs" role="tablist" >
     
                     <li>
-                        <a ui-sref="form.about">Users</a>
+                        <a ui-sref="form.admin.users">Users</a>
                     </li>
                     <li>
-                        <a ui-sref="form.feedback">Items</a>
+                        <a ui-sref="form.admin.items">Items</a>
                     </li>
                     <li>
-                        <a ui-sref="form.help">Category</a>
+                        <a ui-sref="form.admin.category">Category</a>
                     </li>
                      <li>
-                        <a ui-sref="form.help">Password</a>
+                        <a ui-sref="form.admin.settings">Settings</a>
                     </li>
 </ul>
+
+<div id="admin-views" ui-view></div>
+
+</div>
+
 

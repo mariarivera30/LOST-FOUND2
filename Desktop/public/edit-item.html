@@ -79,13 +79,15 @@
                                 Description</label>
                             <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
                                 placeholder="Message"></textarea>
-                        </div class "left">
+                        </div >
                        
-                         <label class="checkbox-inline">
- 
-      <input type="checkbox" id="inlineCheckbox1" value="option1"> Enable the system to send notifications related to this post to your email? "
- 
-    </label>
+                        
+ <div>
+      <input type="checkbox" id="inlineCheckbox1" value="option1"> Enable the system to send notifications related to this post to your email? "</input>
+   </div>
+   <div class="CheckBoxedit2">     
+    <input type="checkbox" id="inlineCheckbox1" value="option2"> Item was delivered.</input>
+   </div>
 
                     </div>
                     </div>
@@ -98,9 +100,10 @@
     </div>
      <div class="caption">
         
-        <a href="#" id ="save"class="btn btn-primary" role="button">Save</a> 
+        <a ui-sref="form.newsfeeds" id ="save"class="btn btn-primary" role="button">Save</a> 
         
-        <a href="#" id ="remove" class="btn btn-primary" role="button">Remove</a> 
+        <a ui-sref="form.newsfeeds" id ="remove" class="btn btn-primary" role="button">Remove</a> 
+        <a ui-sref="form.newsfeeds" id ="reset" class="btn btn-primary" role="button">Reset Key</a> 
       </div>     
 </div>
 

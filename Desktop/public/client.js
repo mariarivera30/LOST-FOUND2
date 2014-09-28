@@ -24,6 +24,11 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 			url: '/reportlost',
 			templateUrl: 'reportlost.html'
 		})
+		.state('form.edititem', {
+			url: '/edititem',
+			templateUrl: 'edit-item.html'
+		})
+
 		
 		// url will be /form/interests
 		.state('form.newsfeeds', {
@@ -64,6 +69,29 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 			url: '/admin',
 			templateUrl: 'admin.html'
 		})
+
+  		.state('form.admin.users', {
+    		parent: 'form.admin',
+    		url: '/adminusers',
+			 templateUrl: 'adminusers.html'})
+
+  		.state('form.admin.items', {
+    		parent: 'form.admin',
+    		url: '/adminitems',
+			 templateUrl: 'adminitems.html'})
+
+  		.state('form.admin.comments', {
+    		parent: 'form.admin',
+    		url: '/admincomments',
+			 templateUrl: 'admincomment.html'})
+
+  		.state('form.admin.settings', {
+    		parent: 'form.admin',
+    		url: '/adminsettings',
+			 templateUrl: 'adminSettings.html'})
+
+	
+	
 		.state('form.help', {
 			url: '/help',
 			templateUrl: 'help.html'

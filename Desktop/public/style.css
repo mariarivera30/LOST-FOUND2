@@ -15,6 +15,10 @@ div.layout
 .right{
     padding-left: 50px;
 }
+.logginItemView{
+
+ padding-right: 100px;
+}
 div.centre
 { 
   text-align: center;
@@ -49,8 +53,32 @@ div.centreheader
   margin-right: 50px;
 }
 .caption{
-  padding-right: 110px;
+  padding-right: 500px;
 
+}
+#AdminSearch{
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+#BlockBtn{
+
+  width: 90px;
+  height: 35px;
+}
+
+#UnblockBtn{
+ 
+  width: 90px;
+  height: 35px;
+}
+.CheckBoxedit2{
+  padding-right: 130px;
+   padding-top: 20px;
+}
+#adminsetting{
+  padding-top: 10px;
+    
 }
 #forTextArea{
   width: 615px;
@@ -59,9 +87,11 @@ div.centreheader
   width: 350px;
 }
 #edit{
-  padding-left: 535px;
-  width: 5.8em;  height: 2.8em;
+  padding-left: 540px;
+
+ 
 }
+
 .check{
   padding-right: 650px;
 }
@@ -107,6 +137,7 @@ div.centreheader
 }
 #editItemView{
   padding-right: 95px;
+
 }
 #picFeedback{
   width: 35%;
