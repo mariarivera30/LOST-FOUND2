@@ -91,9 +91,16 @@ div.centreheader
 
  
 }
+#addadmin{
+  padding-left: 300px;
+    width: 50%;
+}
 
 .check{
   padding-right: 650px;
+}
+.caddAdminButton{
+  padding-right: 50%;
 }
 .cont2{
 
@@ -103,6 +110,15 @@ div.centreheader
 }
 .navbar{
     background:#0a1921;
+}
+.buttonLoginAdmin{
+    padding-top: 10px;
+}
+#secretkey{
+  padding-top: 10px;
+}
+.adminlogin{
+  padding-top: 10px;
 }
 .navbar-bar{
     word-spacing: 30px;

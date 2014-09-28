@@ -75,6 +75,11 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     		url: '/adminusers',
 			 templateUrl: 'adminusers.html'})
 
+		.state('form.admin.category', {
+    		parent: 'form.admin',
+    		url: '/admincategories',
+			 templateUrl: 'admincategories.html'})
+
   		.state('form.admin.items', {
     		parent: 'form.admin',
     		url: '/adminitems',
@@ -90,7 +95,11 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     		url: '/adminsettings',
 			 templateUrl: 'adminSettings.html'})
 
-	
+	.state('form.admin.login', {
+    		parent: 'form.admin',
+    		url: '/adminlogin',
+			 templateUrl: 'adminlogin.html'})
+
 	
 		.state('form.help', {
 			url: '/help',
