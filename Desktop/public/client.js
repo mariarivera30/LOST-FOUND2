@@ -155,12 +155,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
         this.getTranslation = function($scope, language) {
             var languageFilePath = 'translation_' + language + '.json';
             console.log(languageFilePath);
-            $resource(languageFilePath).get(function (data) {
-               $scope.translation = data;
-               alert($scope.translation.HELLO_WORLD);
-
-
-            });
+           return $resource(languageFilePath)
+             //  alert($scope.translation.HELLO_WORLD);
 
 
         };
@@ -169,18 +165,37 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
     .controller('myController',['$scope', 'translationService', 
 	function ($scope, translationService){  
 
-  //Run translation if selected language changes
-  	$scope.translate = function(){
-       translationService.getTranslation($scope, $scope.selectedLanguage);
-   };
-   
-   //Init
-   $scope.selectedLanguage = 'en';
-   $scope.translate();
-   $scope.$apply();
+	// this is my controller forward declaration.
+	// this implicitly applies the scope to the controller
+	var vm = this;
+	vm.translations = {};
+	vm.language = "en";
+	vm.translate = translatePage;
+	vm.onchangeLanguage = onchangeLanguage;
 
+	// Invoke initialization.
+	activate();
 
-   
+	// Initialization method for the controller.
+	function activate()
+	{
+		vm.translate(vm.language);
+	}
+
+    // load the resource from json service
+  	function translatePage(language)
+  	{
+	    translationService.getTranslation($scope,language).get(function (data)
+		{
+			vm.translations = data;
+		});
+	}
+
+	// event handler for language change
+	function onchangeLanguage()
+	{
+		vm.translate(vm.language);
+	}
   
 }])
 

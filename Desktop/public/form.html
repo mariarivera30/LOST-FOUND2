@@ -1,4 +1,4 @@
-<div class="row" >
+<div class="row" ng-controller="myController as vm" >
 <div class="col-sm-8 col-sm-offset-2">
 
   <div id="form-container">
@@ -21,10 +21,10 @@
                 <a class="navbar-brand" ng-click="gotoTop()" href="#">LostFound</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-app="formApp" ng-controller="myController">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a id="Adminlabel" ui-sref="form.admin" ng-click="gotoTop()"  >  {{translation.HELLO_WORLD}}</a>
+                        <a id="Adminlabel" ui-sref="form.admin" ng-click="gotoTop()"  >  {{vm.translations.HELLO_WORLD}}</a>
 
                     </li>
                     <li>
@@ -104,7 +104,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                   <li>
-            <select  ng-controller="myController" class="form-control" ng-change="translate()" ng-model="selectedLanguage">
+            <select class="form-control" ng-change="vm.onchangeLanguage()" ng-model="vm.language">
             <option value="en">English</option>
             <option value="sp">Spanish</option>
              </select>
