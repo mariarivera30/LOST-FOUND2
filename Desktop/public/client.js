@@ -2,7 +2,7 @@
 
 // create our angular app and inject ngAnimate and ui-router 
 // =============================================================================
-angular.module('formApp', ['ngAnimate', 'ui.router'])
+angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
 
 // configuring our routes 
 // =============================================================================
@@ -14,7 +14,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 		.state('form', {
 			url: '/form',
 			templateUrl: 'form.html',
-			controller: 'formController'
+			controller: 'formController',
+			controller:'myController'
 		})
 		
 		// nested states 
@@ -149,6 +150,40 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 	};
 	
 })
+.service('translationService', function($resource){  
+
+        this.getTranslation = function($scope, language) {
+            var languageFilePath = 'translation_' + language + '.json';
+            console.log(languageFilePath);
+            $resource(languageFilePath).get(function (data) {
+               $scope.translation = data;
+               alert($scope.translation.HELLO_WORLD);
+
+
+            });
+
+
+        };
+    })
+
+    .controller('myController',['$scope', 'translationService', 
+	function ($scope, translationService){  
+
+  //Run translation if selected language changes
+  	$scope.translate = function(){
+       translationService.getTranslation($scope, $scope.selectedLanguage);
+   };
+   
+   //Init
+   $scope.selectedLanguage = 'en';
+   $scope.translate();
+   $scope.$apply();
+
+
+   
+  
+}])
+
 .controller('ScrollController', ['$scope', '$anchorScroll',
       function ($scope, $anchorScroll) {
         $scope.gotoTop = function() {
@@ -160,6 +195,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
           $anchorScroll();
         };
       }])
+
 .controller('CategoryController', function($scope) {
 	
 	// we will store all of our form data in this object
