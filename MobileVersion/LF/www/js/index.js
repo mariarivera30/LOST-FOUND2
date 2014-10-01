@@ -313,14 +313,17 @@ angular.module('LostFound', ['ionic'])
             }
         }];
         $scope.tutorials = [
-            {'name': 'HomeScreen',
-             'pict':'https://www.dropbox.com/s/gdaq36no9cxo3yv/tutorial1.jpg'
+            {
+             'pict':'tutorialitem.jpg'
             },
-            {'name': 'Juan del Pueblo',
-             'pict':'Las tiene Pedro'
+            {
+             'pict':'tutorialnav.jpg'
             },
-            {'name': 'Karla Rivera',
-             'pict':'Se te calleron en el zafacon.'
+            {
+             'pict':'tutorialreportside.jpg'
+            },
+            {
+             'pict':'tutorialspecificitem.jpg'
             },
         ];
     }])
