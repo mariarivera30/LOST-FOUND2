@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="well well-sm">
+            <div class="well well-sm" id="feedbackContainer">
                 <form>
                 <div class="row">
                    
@@ -28,13 +28,14 @@
         </div>
                     </div>
                     <div  class="col-md-6">
-                        <div class="form-group">
+                        <div class="form-group" id="feedbackTextBox">
                             <label for="name">
                                 {{vm.translations.FEEDBACK}}</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                            <textarea  name="message" id="message" class="form-control"  height ="217px"
+  width="350px" required="required"
                                 placeholder="{{vm.translations.MESSAGE}}"></textarea>
                         </div>
-                        <div class="col-md-12">
+                        <div >
                       
                         <button  type="submit" ng-click="gotoTop()" class="btn btn-primary pull-right" id="btnContactUs">
                             {{vm.translations.SENDMESSAGE}}</button>

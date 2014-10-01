@@ -7,9 +7,9 @@
         
         <div class="input-group" ng-controller="CategoryController">
       <div class="input-group-btn" >
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">By: <span class="caret"></span > 
-             <select width="100" style="width: 100px">
-                     <option selected>All</option>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> {{vm.translations.BY}}: <span class="caret"></span > 
+             <select  id= "categoryscroll" width="120" style="width: 120px" color="black">
+                     <option selected> {{vm.translations.ALL}}</option>
                      <option ng-repeat="category in categories">{{category.name}}</option>
                 
                    
