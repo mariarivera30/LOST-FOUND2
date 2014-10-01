@@ -123,7 +123,9 @@ angular.module('LostFound', ['ionic'])
                          {'name': 'Clothes'},
                          {'name': 'Other'}];
 
-        $scope.itemspre = [{'name': 'Maria Rivera',
+        $scope.itemspre = [
+        {'itemname': 'Chaqueta',
+         'name': 'Maria Rivera',
          'itemId': '#80',
           'views': '12',
           'status':'FOUND',
@@ -131,7 +133,8 @@ angular.module('LostFound', ['ionic'])
           'imageurl': 'http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg' 
         },
 
-          { 'name': 'Juan Rivera',
+          { 'itemname': 'Reloj',
+            'name': 'Juan Rivera',
             'itemId': '#70',
             'views': '13',
             'status':'LOST',
@@ -139,21 +142,24 @@ angular.module('LostFound', ['ionic'])
             'imageurl': 'https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg'
         },
 
-          {'name': 'Irving Rivera',
+          { 'itemname': 'Tablet',
+            'name': 'Irving Rivera',
             'itemId': '#80',
             'views': '12',
             'status':'FOUND',
             'location':'Fisica',
             'imageurl': 'http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg'
         },
-          {'name': 'Xavier De La Torre',
+          { 'itemname': 'Chaqueta',
+            'name': 'Xavier De La Torre',
             'itemId': '#890',
             'views': '130',
             'status':'FOUND',
             'location':'Cafeteria',
             'imageurl': 'http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg'
         },
-            {'name': 'Juan Rivera',
+            {'itemname': 'Chaqueta',
+            'name': 'Juan Rivera',
             'itemId': '#70',
             'views': '13',
             'status':'LOST',
