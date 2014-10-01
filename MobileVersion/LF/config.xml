@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.lf372268" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>LF</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Lost and found project. User can Report lost or found items.
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="irving.ramirez@upr.edu" >
+      UPRM ICOM Student
     </author>
   <content src="index.html"/>
   <access origin="*"/>
@@ -16,4 +16,9 @@
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <feature name="Camera">
+      <param name="android-package" value="org.apache.cordova.CameraLauncher" />
+  </feature>
+
+
 </widget>

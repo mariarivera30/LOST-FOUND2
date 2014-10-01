@@ -22,8 +22,8 @@
     <link href="http://code.ionicframework.com/0.9.27/css/ionic.min.css" rel="stylesheet">
     <script src="http://code.ionicframework.com/0.9.27/js/ionic.bundle.min.js"></script>
 -->
-  <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
-   
+    <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+
 
     <script src="lib/ionic/js/ionic.bundle.min.js"></script>
 
@@ -43,8 +43,7 @@
 
         <ion-pane ion-side-menu-content>
             <ion-nav-bar type="bar bar-header bar-dark"
-                         back-button-type="button-icon"
-                         back-button-icon="ion-ios7-arrow-back"
+                         
                          animation="nav-title-slide-ios7"
                 >
               
@@ -61,8 +60,9 @@
              
              <!--<a ui-sref="main.reportitem" class="item" ng-click="toggleMenu()">Report Item</a>-->
              <a ui-sref="main.home" class="item" ng-click="toggleMenu()">Posts</a>
+             <a ui-sref="main.myitems1" class="item" ng-click="toggleMenu()">myItems</a>
    <!--      <a ui-sref="main.profile" class="item" ng-click="toggleMenu()">Profile</a>
-             <a ui-sref="main.myitems" class="item" ng-click="toggleMenu()">myItems</a>
+             
              <a ui-sref="main.reportedusers" class="item" ng-click="toggleMenu()">Report User</a>-->
              <a ui-sref="main.info" class="item" ng-click="toggleMenu()">About us</a>
              <a ui-sref="main.feedback" class="item" ng-click="toggleMenu()">FeedBack</a>   
@@ -97,54 +97,27 @@
                       <label class="item-input-wrapper">
                         <input type="text" placeholder="Search">
                       </label>
-                    <select width="100" style="width: 100px">
-                      <option selected>All</option>
-                      <option>Date</option>
-                      <optgroup label = "Category">
-                        <option>Electronic</option>
-                        <option>Books</option>
-                        <option>Bags</option>
-                        <option>Personal</option>
-                        <option>Clothes</option>
-                        <option>Other</option>
-                      </optgroup>
-                      <option>Building</option>
-                      <option>ItemId</option>
+                    <select width="100" style="width: 100px" >
+                      <option selected >All</option>
+                      <option ng-repeat = "category in categories" >{{category.name}}</option>
+                      
+                     
                     </select>
                     </div>
                   </div>
                   
-                  <div class="list">
-                        <a class="item item-thumbnail-left" ui-sref="main.item">
-                 <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
-                          <h2>Item Lost 1</h2>
-                          <p>I lost item 1 near stefani</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" sref="home.item">
-                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
-                          <h2>Item Lost 2</h2>
-                          <p>I lost item 2 near chardon</p>
-                        </a>
-                      </div>
+                  <div class="list" ng-repeat="item in itemspre">
                     
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
-                          <h2>Item Lost 3</h2>
-                          <p>I lost item 3 near biology</p>
+                        <a class="item item-thumbnail-left" ui-sref="main.item">
+                 <img src={{item.imageurl}}>
+                          <h2>Name:{{item.name}}</h2>
+                          <p>Last Seen:{{item.location}}</p>
+                          <p>Satus:{{item.status}}</p>
+                          <p>{{item.views}}</p>
                         </a>
                       </div>
                   
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
-                          <h2>Item Lost 4</h2>
-                          <p>I lost item 4 near ICDL</p>
-                        </a>
-                      </div>
+                  
                   
                 </ion-content>
             </ion-tab>
@@ -160,86 +133,20 @@
                       </label>
                     <select width="100" style="width: 100px">
                       <option selected>All</option>
-                      <option>Date</option>
-                      <optgroup label = "Category">
-                        <option>Electronic</option>
-                        <option>Books</option>
-                        <option>Bags</option>
-                        <option>Personal</option>
-                        <option>Clothes</option>
-                        <option>Other</option>
-                      </optgroup>
-                      <option>Building</option>
-                      <option>ItemId</option>
+                      <option ng-repeat = "category in categories" >{{category.name}}</option>
                     </select>
                     </div>
                   </div>
-                  
-                <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
-                          <h2>Item Lost 1</h2>
-                          <p>I lost item 1 near stefani</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
-                          <h2>Item Found 2</h2>
-                          <p>I recently found item 2 near stefani</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
-                          <h2>Item Lost 2</h2>
-                          <p>I lost item 2 near chardon</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
-                          <h2>Item Found 3</h2>
-                          <p>I recently found item 3 near La plazita</p>
-                        </a>
-                      </div>
+                 <div class="list" ng-repeat="item in itemspre">
                     
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
-                          <h2>Item Lost 3</h2>
-                          <p>I lost item 3 near biology</p>
+                        <a class="item item-thumbnail-left" ui-sref="main.item">
+                 <img src={{item.imageurl}}>
+                          <h2>Name:{{item.name}}</h2>
+                          <p>Last Seen:{{item.location}}</p>
+                          <p>Satus:{{item.status}}</p>
+                          <p>{{item.views}}</p>
                         </a>
                       </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
-                          <h2>Item Found 1</h2>
-                          <p>I recently found item 1 near BIOL</p>
-                        </a>
-                      </div>
-                  
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
-                          <h2>Item Lost 4</h2>
-                          <p>I lost item 4 near ICDL</p>
-                        </a>
-                      </div>
-                    
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
-                          <h2>Item Found 4</h2>
-                          <p>I recently found item 4 near BIOL</p>
-                        </a>
-                      </div>
-                      
                 
                 </ion-content>
             </ion-tab>
@@ -254,51 +161,20 @@
                         <input type="text" placeholder="Search">
                       </label>
                     <select width="100" style="width: 100px">
-                      <option selected>All</option>
-                      <option>Date</option>
-                      <optgroup label = "Category">
-                        <option>Electronic</option>
-                        <option>Books</option>
-                        <option>Bags</option>
-                        <option>Personal</option>
-                        <option>Clothes</option>
-                        <option>Other</option>
-                      </optgroup>
-                      <option>Building</option>
-                      <option>ItemId</option>
+                       <option selected >All</option>
+                      <option ng-repeat = "category in categories" >{{category.name}}</option>
                     </select>
                     </div>
                   </div>
                     
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://static.photo.net/v3graphics/20140428/equipment/medium/2964.jpg">
-                          <h2>Item Found 1</h2>
-                          <p>I recently found item 1 near BIOL</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://www.vivetumoto.com/foros/attachments/chaquetas-motociclistas/2873d1356133608t-vendo-hermosa-chaqueta-icon-overlord-typer-1-dsc_0473-1-.jpg">
-                          <h2>Item Found 2</h2>
-                          <p>I recently found item 2 near stefani</p>
-                        </a>
-                      </div>
+                  <div class="list" ng-repeat="item in itemspre">
                     
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="https://img0.etsystatic.com/023/0/6677928/il_340x270.577570516_6vcv.jpg">
-                          <h2>Item Found 3</h2>
-                          <p>I recently found item 3 near La plazita</p>
-                        </a>
-                      </div>
-                  
-                  <div class="list">
-                        <a class="item item-thumbnail-left" href="#">
-                          <img src="http://i00.i.aliimg.com/photo/v0/353397906/10_inch_TABLET_PC_Talet_computer_10.jpg">
-                          <h2>Item Found 4</h2>
-                          <p>I recently found item 4 near BIOL</p>
+                        <a class="item item-thumbnail-left" ui-sref="main.item">
+                 <img src={{item.imageurl}}>
+                          <h2>Name:{{item.name}}</h2>
+                          <p>Last Seen:{{item.location}}</p>
+                          <p>Satus:{{item.status}}</p>
+                          <p>{{item.views}}</p>
                         </a>
                       </div>
                   
@@ -334,7 +210,7 @@
                   </p>
             </div>
             <div class="item item-body">
-                  <p> <a href="#" class="subdued">5 Comments</a></p>
+                  <p> <a ui-sref= "main.comments" class="subdued">5 Comments</a></p>
                   <p><a href="#" class="subdued">Location: Stefani</a></p>
                 <p><a href="#" class="subdued">Seen By: 100</a></p>
                   
@@ -342,9 +218,9 @@
 
                 <div class="item tabs tabs-secondary tabs-icon-left">
                   </a>
-                  <a class="tab-item" href="#">
+                  <a class="tab-item" ui-sref="main.comments">
                     <i class="icon ion-chatbox"></i>
-                    Comment
+                    Comments
                   </a>
                   <a class="tab-item" href="#">
                     <i class="icon ion-thumbsdown"></i>
@@ -361,8 +237,8 @@
     </ion-view>
 
 </script>
-
-<script id="reportitem1.html" type="text/ng-template">
+<!--REPORT-->
+  <script id="reportitem1.html" type="text/ng-template">
     <ion-view title="{{navTitle}}" left-buttons="leftButtons">
 
         <ion-content has-header="true" padding="true">
@@ -414,17 +290,20 @@
 
   <label class="item item-input item-select">
     <div class="input-label">
-      Select a category of the item
+      Select a category of the item:
     </div>
     <select>
-      <optgroup label = "Category">
-        <option>Electronic</option>
-        <option>Books</option>
-        <option>Bags</option>
-        <option>Personal</option>
-        <option>Clothes</option>
-        <option>Other</option>
-      </optgroup>
+       <option selected >All</option>
+                      <option ng-repeat = "category in categories" >{{category.name}}</option>
+    </select>
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Item Status: 
+    </div>
+    <select>
+      <option>Lost</option>
+      <option>Found</option>
     </select>
   </label>
 
@@ -440,9 +319,11 @@
          
           <label>
           <div class="entrybuttons">
-           <p> <button class="button button-stable icon-right ion-image">Upload</button>
+           <p> <button class="button button-stable icon-right ion-image"
+                        ng-click = getPicture() >Upload</button>
           
-            <button class="button button-stable icon-right ion-camera">Take</button></p>
+            <button class="button button-stable icon-right ion-camera"
+                      ng-click = takePicture() >Take</button></p>
           </div>
           </label>
           <p><h5>Select contact information to be displayed:</h5></p>
@@ -504,6 +385,46 @@
 
 </script>
 
+<script id="comments.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+
+                    <div class="card" ng-repeat = "comment in comments">
+            <div class="item item-divider">
+              {{comment.name}}
+            </div>
+            <div class="item item-text-wrap">
+              {{comment.comment}}
+            </div>
+            <div class="item item-divider">
+            {{comment.date}}
+          </div>
+          </div>
+
+
+          <h6>Your Name:</h6>
+            <label class="item item-input">
+            <input type="text" placeholder="First Name">
+          </label>
+               <p><h></h></p>
+            <h6>Leave a comment about this item:</h6>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label"></span>
+                <textarea placeholder="Write Commet here..." rows="8" cols="10">
+                </textarea>
+              </label>
+               <p><h></h></p>
+    <button class="button button-stable" ui-sref = 'main.home'>
+        Post
+    </button>
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
 <!--ABOUT US -------------------------------------------------------------->  
 <script id="info.html" type="text/ng-template">
     <ion-view title="{{navTitle}}" left-buttons="leftButtons">
@@ -514,8 +435,84 @@
           <p>Lost or Found is a web-based system that will allow users to report lost or found items on a Campus. The system provides a simple and user friendly interaction with the user. Every user that wants to use any of the versions of this web-app will have to register with an email and a phone number. Each user will have a credibility status. This status will be made by the grant of other users on the app which indicates that it is a trustworthy user. Also to avoid bad intentional users, the application provides a way to report an user. This report can be seen by every user registered on the application to keep them warned.
           </p>
           
-          <p><a ui-sref="main.home" class="button button outline button-stable">Contact Us</a></p>
+          <p><div class="list">
+
+  <div class="item item-divider">
+    Contact Us:
+  </div>
+
+  <a class="item" ng-disable = "true">
+    irving.ramirez@upr.edu
+  </a>
+  <a class="item">
+    Angel.delatorre@upr.edu
+  </a>
+  <a class="item">
+    maria.rivera30@upr.edu
+  </a>
+
+
+</div>
           <p></p>
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
+
+<script id="myitems1.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+                <div class="list">
+        <label class="item item-input">
+          <span class="input-label">E-mail</span>
+          <input type="text">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">SecretKey</span>
+          <input type="password">
+        </label>
+      </div>
+      <button class="button button-stable" ui-sref = 'main.myitems2'>
+  Find items
+    </button>
+            
+        </ion-content>
+
+    </ion-view>
+
+</script>
+<script id="myitems2.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
+
+        <ion-content has-header="true" padding="true">
+          
+            <div class="list">
+
+                    <div class="item item-input-inset">
+                      <label class="item-input-wrapper">
+                        <input type="text" placeholder="Search">
+                      </label>
+                    <select width="100" style="width: 100px" >
+                      <option selected >All</option>
+                      <option ng-repeat = "category in categories" >{{category.name}}</option>
+                    </select>
+                    </div>
+                  </div>
+                   <div class="list" ng-repeat="item in itemspre">
+                    
+                        <a class="item item-thumbnail-left" ui-sref="main.item">
+                 <img src={{item.imageurl}}>
+                          <h2>Name:{{item.name}}</h2>
+                          <p>Last Seen:{{item.location}}</p>
+                          <p>Satus:{{item.status}}</p>
+                          <p>{{item.views}}</p>
+                        </a>
+                      </div>    
+
+
 
         </ion-content>
 
@@ -546,7 +543,23 @@
 
 </script>
 
+<script id="help.html" type="text/ng-template">
+    <ion-view title="{{navTitle}}" left-buttons="leftButtons">
 
+        <ion-content has-header="true" padding="true">
+          <div class="list card" ng-repeat = help in tutorials>
+
+          <div class="item item-image">
+            <img src={{help.pict}}>
+          </div>
+
+</div>
+
+        </ion-content>
+
+    </ion-view>
+
+</script>
 
 
 
