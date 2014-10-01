@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container ng-controller="languageController">
 
 <div class="row">
 
@@ -18,27 +18,27 @@
                             <div class ="fields">
 
                             <label for="Email">
-                                Email</label>
-                                 <input type="input" class="form-control" id="location" placeholder=" Email " >
+                                {{vm.translations.EMAIL}}</label>
+                                 <input type="input" class="form-control" id="location" placeholder=" {{vm.translations.EMAIL}} " >
                                 
                                  <label for="phone">
-                                Phone</label>
-                                 <input type="input" class="form-control" id="location" placeholder=" Phone " >
+                                {{vm.translations.PHONENUM}}</label>
+                                 <input type="input" class="form-control" id="location" placeholder=" {{vm.translations.PHONENUM}} " >
                              </div>
                             <label for="name">
-                                Comment</label>
+                                {{vm.translations.COMMENT}}</label>
                             <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea>
+                                placeholder="{{vm.translations.MESSAGE}}"></textarea>
                                  
      
                                 <div class="col-md-12">
                                     <div class="check">
                                     <label class="checkbox-inline">
-                                    <input type="checkbox" id="inlineCheckbox101" value="option1"> Private
+                                    <input type="checkbox" id="inlineCheckbox101" value="option1"> {{vm.translations.PRIVATE}}
                                     </label>
                                 </div>
                         <button type="submit" class="btn btn-primary pull-right" id="btnContactUs" ng-click="gotoTop()" ui-sref="form.viewitem">
-                            Add Comment</button>
+                            {{vm.translations.ADDCOMMENT}}</button>
                     </div>
                         </div>
                     </div>

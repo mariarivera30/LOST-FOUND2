@@ -1,4 +1,4 @@
-<div class="row" ng-controller="myController as vm" >
+<div class="row" ng-controller="languageController as vm" >
 <div class="col-sm-8 col-sm-offset-2">
 
   <div id="form-container">
@@ -23,19 +23,27 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                  
+                  
                     <li>
-                        <a id="Adminlabel" ui-sref="form.admin" ng-click="gotoTop()"  >  {{vm.translations.HELLO_WORLD}}</a>
+                        <a id="Adminlabel" ui-sref="form.admin" ng-click="gotoTop()" position="absolute" >  {{vm.translations.ADMIN}}</a>
 
                     </li>
                     <li>
-                        <a ui-sref="form.about" ng-click="gotoTop()">About</a>
+                        <a ui-sref="form.about" ng-click="gotoTop()">{{vm.translations.ABOUT}}</a>
                     </li>
                     <li>
-                        <a ui-sref="form.feedback" ng-click="gotoTop()">Contact us</a>
+                        <a ui-sref="form.feedback" ng-click="gotoTop()">{{vm.translations.CONTACT}}</a>
                     </li>
                     <li>
-                        <a ui-sref="form.help" ng-click="gotoTop()">Help</a>
+                        <a ui-sref="form.help" ng-click="gotoTop()">{{vm.translations.HELP}}</a>
                     </li>
+
+                     <li id="nameUser"> <input type="text" class="form-control input-sm"  placeholder="{{vm.translations.EMAIL}}" ></li>
+  
+              <li id="scretkeyuser">  <input type="text" class="form-control input-sm"  placeholder="{{vm.translations.SECRETKEY}}" > </li>        
+                
+              <li id="buttongetmypost"> <a ui-sref="form.newsfeeds"  class="btn btn-small" role="button" >{{vm.translations.MYPOST}}</a></li> 
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -63,7 +71,7 @@
          <div class="centre">
           <div id="status-buttons" class="text-center" >
               <a class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".reportlost"><span>*</span> Lost</a>
-              <a  class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".newsfeeds"><span>*</span> Home</a>
+              <a  class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".newsfeeds"><span>*</span> {{vm.translations.HOME}}</a>
               <a class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".reportfound"><span>*</span> Found</a>
           </div>
         </div>
@@ -103,18 +111,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li>
-            <select class="form-control" ng-change="vm.onchangeLanguage()" ng-model="vm.language">
+                  <li id="languageselect">
+            <select  class="form-control input-sm" ng-change="vm.onchangeLanguage()" ng-model="vm.language">
             <option value="en">English</option>
             <option value="sp">Spanish</option>
              </select>
                     </li>
                     
+                            
+             
+             
+                  
                     
                 </ul>
                 <div id="status-buttons" class="text-right">
              <a class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".reportlost"><span>*</span> Lost</a>
-              <a  class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".newsfeeds"><span>*</span> Home</a>
+              <a  class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".newsfeeds"><span>*</span> {{vm.translations.HOME}}</a>
               <a class="centre" ui-sref-active="active" ng-click="gotoTop()" ui-sref=".reportfound"><span>*</span> Found</a>
           </div>
             </div>

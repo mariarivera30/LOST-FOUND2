@@ -15,7 +15,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
 			url: '/form',
 			templateUrl: 'form.html',
 			controller: 'formController',
-			controller:'myController'
+			controller:'languageController'
 		})
 		
 		// nested states 
@@ -57,6 +57,10 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
 		.state('form.viewitem', {
 			url: '/view',
 			templateUrl: 'viewItem.html'
+		})
+		.state('form.viewitemowner', {
+			url: '/viewitemowner',
+			templateUrl: 'viewItemOwner.html'
 		})
 		.state('form.feedback', {
 			url: '/feedback',
@@ -154,7 +158,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
 
         this.getTranslation = function($scope, language) {
             var languageFilePath = 'translation_' + language + '.json';
-            console.log(languageFilePath);
+           // console.log(languageFilePath);
            return $resource(languageFilePath)
              //  alert($scope.translation.HELLO_WORLD);
 
@@ -162,7 +166,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router', 'ngResource'])
         };
     })
 
-    .controller('myController',['$scope', 'translationService', 
+    .controller('languageController',['$scope', 'translationService', 
 	function ($scope, translationService){  
 
 	// this is my controller forward declaration.

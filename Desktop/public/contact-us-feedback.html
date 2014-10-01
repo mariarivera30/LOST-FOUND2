@@ -13,7 +13,7 @@
                         <div class="col-md-12">
             <form>
                  <p align = "left">
-            <h3>Contact Us</h3> 
+            <h3>{{vm.translations.CONTACT}}</h3> 
         
                
             
@@ -30,14 +30,14 @@
                     <div  class="col-md-6">
                         <div class="form-group">
                             <label for="name">
-                                Feedback</label>
+                                {{vm.translations.FEEDBACK}}</label>
                             <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea>
+                                placeholder="{{vm.translations.MESSAGE}}"></textarea>
                         </div>
                         <div class="col-md-12">
                       
                         <button  type="submit" ng-click="gotoTop()" class="btn btn-primary pull-right" id="btnContactUs">
-                            Send Message</button>
+                            {{vm.translations.SENDMESSAGE}}</button>
                    
                          </div>
          

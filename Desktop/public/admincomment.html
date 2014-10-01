@@ -1,13 +1,13 @@
-<div>
+<div ngController="languageController">
 <div id = "AdminSearch">
    <div class="col-xs-6 col-md-10">
               
-                 <input type="text" class="form-control" placeholder="Search" id="searchBarUsers">
+                 <input type="text" class="form-control" placeholder={{vm.translations.SEARCH}} id="searchBarUsers">
              </div>
  
               
    <div id ="searchUser">                        
-        <a href="#" id ="SearchBtn" class="btn btn-primary" role="button" >Search</a> 
+        <a href="#" id ="SearchBtn" class="btn btn-primary" role="button" >{{vm.translations.SEARCH}}</a> 
         
       </div> 
 </div>
@@ -18,12 +18,12 @@
   <div id = "headingUserList" class="panel-heading"> 
 
    <div class="col-xs-6 col-md-8">    
-   <h4 align = "left"> <strong>Comments</strong></h4>
+   <h4 align = "left"> <strong>{{vm.translations.COMMENTS}}</strong></h4>
 
 </div>
               
-        <a href="#" id ="BlockBtn" class="btn btn-primary" role="button" >Block</a> 
-        <a href="#" id ="UnblockBtn" class="btn btn-primary" role="button" >Unblock</a> 
+        <a href="#" id ="BlockBtn" class="btn btn-primary" role="button" >{{vm.translations.BLOCK}}</a> 
+        <a href="#" id ="UnblockBtn" class="btn btn-primary" role="button" >{{vm.translations.UNBLOCK}}</a> 
 
   </div>
   <!-- <div class="panel-body">
@@ -34,9 +34,9 @@
   <table class="table">
         <thead>
           <tr>
-            <th><center>Select</center></th>
-            <th><center>Comment</center></th>
-            <th><center>Email</center></th>
+            <th><center>{{vm.translations.SELECT}}</center></th>
+            <th><center>{{vm.translations.COMMENT}}</center></th>
+            <th><center>{{vm.translations.EMAIL}}</center></th>
           </tr>
         </thead>
         <tbody>

@@ -6,12 +6,12 @@
   <div id = "headingUserList" class="panel-heading"> 
 
    <div class="col-xs-6 col-md-8">    
-   <h4 align = "left"> <strong>User Administrators</strong></h4>
+   <h4 align = "left"> <strong>{{vm.translations.USERSADMINISTRATOR}}</strong></h4>
 
 </div>
               
-        <a href="#" id ="BlockBtn" class="btn btn-primary" role="button" >Reset Key</a> 
-        <a href="#" id ="UnblockBtn" class="btn btn-primary" role="button" >Remove</a> 
+        <a href="#" id ="BlockBtn" class="btn btn-primary" role="button" >{{vm.translations.RESETKEY}}</a> 
+        <a href="#" id ="UnblockBtn" class="btn btn-primary" role="button" >{{vm.translations.REMOVE}}</a> 
 
 
   </div>
@@ -23,10 +23,10 @@
   <table class="table">
         <thead>
           <tr>
-            <th><center>Select</center></th>
-            <th><center>First Name</center></th>
-            <th><center>Last Name</center></th>
-            <th><center>Email</center></th>
+            <th><center>{{vm.translations.SELECT}}</center></th>
+            <th><center>{{vm.translations.FIRSTNAME}}</center></th>
+            <th><center>{{vm.translations.LASTNAME}}</center></th>
+            <th><center>{{vm.translations.EMAIL}}</center></th>
           </tr>
         </thead>
         <tbody>
@@ -46,21 +46,21 @@
 <div  ><center>
                         <div class="form-group">
                             <label for="nameUser">
-                                First Name</label>
+                                {{vm.translations.FIRSTNAME}}</label>
                             <input type="text" class="form-control" id="nameUser" placeholder="First Name" required="require">
                              <label for="lastUser">
-                                Last Name</label>
+                                {{vm.translations.LASTNAME}}</label>
                             <input type="text" class="form-control" id="lastUser" placeholder="Last Name" required="require">
                             <label for="Email">
-                                Email</label>
+                                {{vm.translations.EMAIL}}</label>
                             <input type="text" class="form-control" id="email" placeholder="juan@gmail.com" required="require">
                              <label for="phone">
-                                Phone Number</label>
+                                {{vm.translations.PHONENUM}}</label>
                             <input type="text" class="form-control" id="phone" placeholder="787-655-5678" >
                           </div>
                           <div class="addAdminButton">
         
-        <p><a  ui-sref="form.newsfeeds" class="btn btn-primary" ng-click="gotoTop()" role="button">Add</a> </p>
+        <p><a  ui-sref="form.newsfeeds" class="btn btn-primary" ng-click="gotoTop()" role="button">{{vm.translations.ADD}}</a> </p>
       </div>   </center>
                         </div>
                       </div>

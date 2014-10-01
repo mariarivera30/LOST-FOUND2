@@ -17,7 +17,7 @@
 
       </div><!-- /btn-group -->
      
-      <input type="text" class="form-control" placeholder="Search">
+      <input type="text" class="form-control" placeholder=" {{vm.translations.SEARCH}}">
      
   
 <!-- /input-group -->
@@ -26,7 +26,7 @@
        </div>
 <div class="reportbtn">
     <a ui-sref="form.reportitem" ng-click="gotoTop()" class="btn btn-block btn-info">
-    Report FOUND Item <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    {{vm.translations.REPORTFOUND}} <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </a>
 </div>
 </div>
@@ -37,7 +37,7 @@
   <li class="list-group-item" ng-repeat="item in items">
     <div class="row">
   <div class="col-xs-6 col-md-4"><div class="itemimg"><img src="http://www.quick-return-cleaners.co.uk/sitebuildercontent/sitebuilderpictures/keys.jpg" height="200" width="200"> </div></div>
-  <div class="col-xs-6 col-md-4"><h2 ><CENTER>{{item.status}}</CENTER></h2><h4><CENTER>Item id: {{item.itemId}}</CENTER></h4><h4><CENTER>{{item.location}}</CENTER></h4><h4><center>Seen by: {{item.views}}</center></h4>
+  <div class="col-xs-6 col-md-4"><h2 ><CENTER>{{item.status}}</CENTER></h2><h4><CENTER> {{vm.translations.ITEMID}}: {{item.itemId}}</CENTER></h4><h4><CENTER>{{item.location}}</CENTER></h4><h4><center> {{vm.translations.SEENBY}}: {{item.views}}</center></h4>
  </div>
   <div class="col-xs-6 col-md-4">  
  
